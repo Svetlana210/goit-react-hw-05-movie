@@ -1,0 +1,12 @@
+.wrap {
+  padding-left: 40px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.item {
+  margin-bottom: 5px;
+}
