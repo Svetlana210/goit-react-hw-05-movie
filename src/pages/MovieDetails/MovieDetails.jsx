@@ -2,9 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { searchMoviesDetails } from 'api';
 import MovieDetailsInfo from 'components/MovieDetailsInfo/MovieDetailsInfo';
+import Loader from 'components/Loader/Loader';
 
 const MovieDetails = () => {
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -28,7 +29,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      {loading && <p>Loading...</p>}
+      {loading && <Loader />}
       {error && <p>Error</p>}
       <MovieDetailsInfo props={details} />
     </>
