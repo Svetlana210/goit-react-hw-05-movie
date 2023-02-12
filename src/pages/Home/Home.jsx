@@ -15,7 +15,7 @@ const Home = () => {
       try {
         // setLoading(true);
         const data = await searchMovies();
-        setItems(data.results);
+        setItems(data);
       } catch (error) {
         // setError(error.message);
       } finally {
