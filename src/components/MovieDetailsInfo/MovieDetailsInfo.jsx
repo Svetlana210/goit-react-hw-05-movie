@@ -11,7 +11,11 @@ const MovieDetailsInfo = ({ props }) => {
     poster_path,
   } = props;
 
-  const genreList = genres.map(genre => <li key={genre.id}>{genre.name}</li>);
+  const genreList = genres.map(genre => (
+    <li className={styles.item} key={genre.id}>
+      {genre.name}
+    </li>
+  ));
 
   //   const posterUrl = 'https://image.tmdb.org/t/p/w500/' + poster_path;
 
@@ -26,9 +30,9 @@ const MovieDetailsInfo = ({ props }) => {
         </h2>
         <p>User score: {Math.round(vote_average * 10)}%</p>
         <p className={styles.text}>Overview</p>
-        <p>{overview}</p>
+        <p className={styles.textbig}>{overview}</p>
         <p className={styles.text}>Genres</p>
-        <ul>{genreList}</ul>
+        <ul className={styles.list}>{genreList}</ul>
       </div>
     </div>
   );

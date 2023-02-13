@@ -1,0 +1,9 @@
+.list {
+  margin-left: 20px;
+  max-width: 1300px;
+}
+.name {
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}

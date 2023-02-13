@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { searchMoviesDetails } from 'api';
 import MovieDetailsInfo from 'components/MovieDetailsInfo/MovieDetailsInfo';
 import Loader from 'components/Loader/Loader';
+import styles from './movie-details.module.css';
 
 const MovieDetails = () => {
   const [details, setDetails] = useState({});
@@ -32,6 +33,22 @@ const MovieDetails = () => {
       {loading && <Loader />}
       {error && <p>Error</p>}
       <MovieDetailsInfo props={details} />
+      <div className={styles.container}>
+        <h2 className={styles.title}>Additional information</h2>
+        <ul className={styles.list}>
+          <li className={styles.item}>
+            <NavLink to="cast" className={styles.link}>
+              Cast
+            </NavLink>
+          </li>
+          <li className={styles.item}>
+            <NavLink to="reviews" className={styles.link}>
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+        <Outlet />
+      </div>
     </>
   );
 };
