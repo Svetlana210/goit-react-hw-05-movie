@@ -17,12 +17,10 @@ const MovieDetailsInfo = ({ props }) => {
     </li>
   ));
 
-  //   const posterUrl = 'https://image.tmdb.org/t/p/w500/' + poster_path;
-
   let year = release_date.substring(0, 4);
   return (
     <div className={styles.container}>
-      <img src={checkPoster(poster_path)} alt={title} width="300" />
+      <img src={checkPoster(poster_path)} alt={title} width="250" />
       <div className={styles.wrap}>
         <h2>
           {title}

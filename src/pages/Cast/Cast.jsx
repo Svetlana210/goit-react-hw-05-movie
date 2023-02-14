@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { searchMoviesCast } from 'api';
 import Loader from 'components/Loader/Loader';
 import { checkImage } from '../../components/checkPoster/checkPoster';
@@ -42,6 +43,21 @@ const Cast = () => {
       {items.length > 0 && <ul className={styles.list}>{elements}</ul>}
     </>
   );
+};
+
+Cast.defaultProps = {
+  items: [],
+};
+
+Cast.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      character: PropTypes.string.isRequired,
+      profile_path: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 export default Cast;

@@ -1,5 +1,5 @@
 .container {
-  margin-top: 20px;
+  margin-top: 15px;
   border-top: 2px solid rgb(195, 191, 191);
 }
 .title {
@@ -20,4 +20,19 @@
 }
 .link:global(.active) {
   font-weight: 600;
+}
+
+.btn {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 45px;
+  padding: 7px;
+  background-color: transparent;
+  border: 1px solid rgb(129, 13, 13);
+  border-radius: 3px;
+}
+.btn:hover {
+  background-color: rgb(129, 13, 13);
+  color: azure;
 }
